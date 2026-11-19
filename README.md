@@ -1,7 +1,18 @@
 # PAMAP2 Physical Activity Data Analyzer
 
-## 1. Project Overview
+## Key Highlights
 
+This project analyzes physiological measurements from the PAMAP2 Physical Activity Monitoring dataset using Python, pandas, and matplotlib.
+
+**Key results:**
+- **376,417 original observations** processed and cleaned into **22,846 valid observations**.
+- **122.18 bpm** average heart rate across the cleaned dataset.
+- **120.44 bpm** average heart rate during walking.
+- **161.34 bpm** average heart rate during running.
+- **40.90 bpm** higher average heart rate during running compared with walking.
+- **Four visualizations** generated to examine heart-rate distributions, activity differences, and changes over time.
+
+## 1. Project Overview
 The PAMAP2 Physical Activity Data Analyzer is a Python-based exploratory data analysis project focused on examining heart-rate measurements across different physical activities.
 
 The project demonstrates practical applications of data cleaning, descriptive statistics, data visualization, and file management using Python, pandas, and matplotlib.
@@ -168,7 +179,7 @@ The box plot compares heart-rate distributions during walking and running, inclu
 ## 7. Project Structure
 
 ```text
-fitness_project/
+pamap2-physical-activity-analysis/
 ├── main/
 │   └── pamap2_analysis.py
 ├── data/
@@ -186,59 +197,46 @@ fitness_project/
 
 **Note:** The raw dataset and generated CSV are excluded from the GitHub repository using `.gitignore`. The raw dataset must be downloaded separately before running the program.
 
+
 ## 8. Installation and Usage
 
-### Requirements
-
-- Python 3
-- pandas
-- matplotlib
-
-### Installation
-
-**Step 1: Clone the repository**
+### Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/etrykk/pamap2-physical-activity-analysis.git
-```
-
-**Step 2: Navigate to the project directory**
-
-```bash
 cd pamap2-physical-activity-analysis
 ```
 
-**Step 3: Install the required libraries**
+### Step 2: Install Dependencies
+
+Ensure Python 3 is installed, then install the required libraries:
 
 ```bash
-python -m pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-### Dataset Setup
+### Step 3: Download the Dataset
 
-1. Download the PAMAP2 Physical Activity Monitoring dataset from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/231/pamap2+physical+activity+monitoring).
-2. Extract the downloaded dataset.
-3. Locate `subject101.dat` within the dataset's protocol recordings.
-4. Place `subject101.dat` inside the project's `data/` directory.
+Download the PAMAP2 Physical Activity Monitoring dataset from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/231/pamap2+physical+activity+monitoring).
 
-### Running the Program
+Extract `subject101.dat` from the `Protocol` folder and place it inside a `data/` folder in the project's root directory.
 
-From the project's root directory, execute:
+### Step 4: Run the Analysis
+
+From the project's root directory, run:
 
 ```bash
 python main/pamap2_analysis.py
 ```
 
-The program will:
+### Step 5: View the Results
 
-1. Import the PAMAP2 dataset.
-2. Clean missing and excluded observations.
-3. Calculate and display descriptive statistics.
-4. Generate four visualizations.
-5. Export the cleaned dataset as a CSV file.
-6. Save the generated graphs as PNG files.
+The script automatically creates an `outputs/` directory and saves:
 
-All generated files will be saved inside the `outputs/` directory.
+- Four PNG visualizations of heart-rate data.
+- `cleaned_fitness_data.csv` containing the cleaned observations.
+
+The program also displays descriptive statistics in the console, including mean, minimum, maximum, and standard deviation of heart rate, along with activity-level summaries.
 
 ## 9. Limitations and Future Improvements
 
