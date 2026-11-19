@@ -1,0 +1,27 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE configuration
+.spyproject/
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Original development script
+fitness_data_proj.py
+
+# Dataset files
+data/*.dat
+
+# Generated CSV data
+outputs/*.csv
